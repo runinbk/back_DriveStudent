@@ -22,23 +22,23 @@ import authRoutes from "../routes/auth";
 
 class Server {
 
-    private app : Application;
-    private port : string;
+    private app: Application;
+    private port: string;
     private apiPaths = {
-        auth:         '/api/auth',
-        usuarios:     '/api/usuarios',
-        roles:        '/api/roles',
+        auth: '/api/auth',
+        usuarios: '/api/usuarios',
+        roles: '/api/roles',
         preferencias: '/api/pref',
-        brevet :      '/api/brevet',
-        vehiculo:     '/api/vehiculo',
-        targeta:      '/api/targeta',
-        carac_espe:   '/api/caractespe',
-        ruta:         '/api/ruta',
-        carrera:      '/api/carrera',
-        soliviaje:    '/api/soliviaje',
-        califcom:     '/api/califcom',
-        pago:         '/api/pago',
-        punto:         '/api/punto'
+        brevet: '/api/brevet',
+        vehiculo: '/api/vehiculo',
+        targeta: '/api/targeta',
+        carac_espe: '/api/caractespe',
+        ruta: '/api/ruta',
+        carrera: '/api/carrera',
+        soliviaje: '/api/soliviaje',
+        califcom: '/api/califcom',
+        pago: '/api/pago',
+        punto: '/api/punto'
     }
 
     constructor() {
@@ -60,39 +60,39 @@ class Server {
         }
     }
 
-    middlewares(){
+    middlewares() {
         // CORS
-        this.app.use( cors() );
+        this.app.use(cors());
 
         // Lectura del body
-        this.app.use( express.json() );
+        this.app.use(express.json());
 
         // Carpeta Publica
-        this.app.use( express.static('public') );
+        this.app.use(express.static('public'));
 
     }
 
-    routes(){
-        this.app.use( this.apiPaths.auth, authRoutes ),
-        this.app.use( this.apiPaths.usuarios, usuarioRoutes ),
-        this.app.use( this.apiPaths.roles, rolRoutes ),
-        this.app.use( this.apiPaths.brevet, brevetRoutes ),
-        this.app.use( this.apiPaths.preferencias, prefRoutes ),
-        this.app.use( this.apiPaths.vehiculo, vehiculoRoutes )
-        this.app.use( this.apiPaths.targeta, targetaRoutes ),
-        this.app.use( this.apiPaths.carac_espe, caracespeRoutes ),
-        this.app.use( this.apiPaths.ruta, rutaRoutes ),
-        this.app.use( this.apiPaths.carrera, carreraRoutes ),
-        this.app.use( this.apiPaths.soliviaje, soliviajeRoutes ),
-        this.app.use( this.apiPaths.califcom, calicomRoutes ),
-        this.app.use( this.apiPaths.pago, pagoRoutes ),
-        this.app.use( this.apiPaths.punto, puntoRoutes )
+    routes() {
+        this.app.use(this.apiPaths.auth, authRoutes),
+            this.app.use(this.apiPaths.usuarios, usuarioRoutes),
+            this.app.use(this.apiPaths.roles, rolRoutes),
+            this.app.use(this.apiPaths.brevet, brevetRoutes),
+            this.app.use(this.apiPaths.preferencias, prefRoutes),
+            this.app.use(this.apiPaths.vehiculo, vehiculoRoutes)
+        this.app.use(this.apiPaths.targeta, targetaRoutes),
+            this.app.use(this.apiPaths.carac_espe, caracespeRoutes),
+            this.app.use(this.apiPaths.ruta, rutaRoutes),
+            this.app.use(this.apiPaths.carrera, carreraRoutes),
+            this.app.use(this.apiPaths.soliviaje, soliviajeRoutes),
+            this.app.use(this.apiPaths.califcom, calicomRoutes),
+            this.app.use(this.apiPaths.pago, pagoRoutes),
+            this.app.use(this.apiPaths.punto, puntoRoutes)
     }
 
-    listen(){
-        this.app.listen( this.port, () => {
+    listen() {
+        this.app.listen(this.port, () => {
             console.log('Servidor corriendo en el puerto ' + this.port);
-        } )
+        })
     }
 }
 

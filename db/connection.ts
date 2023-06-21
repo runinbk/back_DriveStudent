@@ -1,8 +1,23 @@
-import { Sequelize } from "sequelize";
+import { Options, Sequelize } from "sequelize";
 
-const db = new Sequelize('driveStudent', 'postgres', 'password', {
-    host: 'localhost',
-    dialect: "postgres",
-})
+const user = encodeURIComponent(process.env.DB_USER || '');
+const password = encodeURIComponent(process.env.DB_PASSWORD || '');
+const host = encodeURIComponent(process.env.DB_HOST || '');
+const port = encodeURIComponent(process.env.DB_PORT || '');
+const database = encodeURIComponent(process.env.DB_DATABASE || '');
+const typeDatabase = 'postgres';;
 
-export default db;
+const url = `${typeDatabase}://${user}:${password}@${host}:${port}/${database}`;
+
+const options: Options = {
+    dialect: 'postgres', // 'mysql' | 'sqlite' | 'postgres' | 'mariadb' | 'mssql'
+    logging: false, // false
+    dialectOptions: {
+        ssl: {
+            rejectUnauthorized: false
+        }
+    }
+};
+
+const sequelizeConnection = new Sequelize(url, options);
+export default sequelizeConnection;
