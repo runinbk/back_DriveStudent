@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import bcrypt from "bcrypt";
+
 import Targeta from "../models/targeta";
 
 
@@ -30,6 +32,9 @@ export const postTargeta = async ( req : Request, res: Response ) => {
 
     try {
         const targeta = new Targeta(body);
+         // Encriptar la contraseña
+         const salt = bcrypt.genSaltSync();
+         targeta.csv = bcrypt.hashSync(targeta.csv, salt)
         await targeta.save();
         res.json({
             msg :"Guardado exitos ...!!!"
@@ -55,6 +60,11 @@ export const putTargeta = async ( req : Request, res: Response ) => {
                 msg : `No existe un targeta con el id : ${id}`
             })
         }
+        if (body.csv) {
+            // Encriptar la contraseña
+            const salt = bcrypt.genSaltSync();
+            body.csv = bcrypt.hashSync(body.csv, salt);
+          }
         await targeta.update(body);
         res.json({targeta})
     } catch (error) {

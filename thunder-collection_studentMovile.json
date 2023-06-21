@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "studentMovile",
-    "dateExported": "2023-06-21T12:06:36.433Z",
+    "dateExported": "2023-06-21T13:57:59.052Z",
     "version": "1.1",
     "folders": [
         {
@@ -170,12 +170,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2023-06-20T21:35:50.321Z",
-            "modified": "2023-06-20T21:47:12.122Z",
+            "modified": "2023-06-21T13:08:26.059Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"numero\" : 8006006,\n  \"fech_emi\": \"2023-05-25\",\n  \"fech_ven\": \"2023-06-26\",\n  \"categoria\": \"p\",\n  \"img_frontal\" : \"ruta/foto_ambe.jpg\",\n  \"img_reverso\" : \"ruta/foto_reverso.jpg\",\n  \"estado\" : true,\n  \"id_usuario\" : 2\n}",
+                "raw": "{\n  \"numero\" : 8007007,\n  \"fech_emi\": \"2023-05-25\",\n  \"fech_ven\": \"2023-06-26\",\n  \"categoria\": \"p\",\n  \"img_frontal\" : \"ruta/foto_ambe.jpg\",\n  \"img_reverso\" : \"ruta/foto_reverso.jpg\",\n  \"estado\" : true,\n  \"id_usuario\" : 2\n}",
                 "form": []
             },
             "tests": []
@@ -189,12 +189,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2023-06-20T22:22:02.308Z",
-            "modified": "2023-06-20T22:52:42.994Z",
+            "modified": "2023-06-21T13:31:00.152Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"num_placa\" : \"xyz123\",\n  \"modelo\": \"Toyo 4runner\",\n  \"año\": 2023,\n  \"cap_pasajeros\": 4,\n  \"img\" : \"ruta/foto_ambe.jpg\",\n  \"estado\" : true,\n  \"id_usuario\" : 2\n}",
+                "raw": "{\n  \"num_placa\" : \"abc321\",\n  \"modelo\": \"Toyo 4runner\",\n  \"año\": 2023,\n  \"cap_pasajeros\": 4,\n  \"img\" : \"ruta/foto_ambe.jpg\",\n  \"estado\" : true,\n  \"id_usuario\" : 2\n}",
                 "form": []
             },
             "tests": []
@@ -208,12 +208,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2023-06-20T23:04:48.303Z",
-            "modified": "2023-06-20T23:44:14.777Z",
+            "modified": "2023-06-21T13:55:58.869Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nom_titular\" : \"brayan Gomez\",\n  \"num_targeta\": 1234567890123456,\n  \"modelo\": \"Toyo 4runner\",\n   \"fech_ven\": \"2023-06-26\",\n  \"csv\" : \"ascas46456465svsvsdvsdv46s5v4s65vsdvsvsdvsvscab\",\n  \"estado\" : true,\n  \"id_usuario\" : 2\n}",
+                "raw": "{\n  \"nom_titular\" : \"willy 1212\",\n  \"num_targeta\": 1234567890123450,\n   \"fech_ven\": \"2023-06-26\",\n  \"csv\" : \"356\",\n  \"estado\" : true,\n  \"id_usuario\" : 5\n}",
                 "form": []
             },
             "tests": []
@@ -586,11 +586,11 @@
             "colId": "32d3154c-3689-48cf-8bd0-09cf0689c4d5",
             "containerId": "4dff0d5b-cf58-4b8d-89a6-6df13e513697",
             "name": "get",
-            "url": "http://localhost:8000/api/brevet/1",
+            "url": "http://localhost:8000/api/brevet/2",
             "method": "GET",
             "sortNum": 30000,
             "created": "2023-06-20T21:35:50.323Z",
-            "modified": "2023-06-20T21:51:27.208Z",
+            "modified": "2023-06-21T13:13:50.983Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -726,16 +726,16 @@
             "colId": "32d3154c-3689-48cf-8bd0-09cf0689c4d5",
             "containerId": "cf502596-3417-4236-8106-322f478e32e1",
             "name": "usuario: put",
-            "url": "http://localhost:8000/api/usuarios/1",
+            "url": "http://localhost:8000/api/usuarios/2",
             "method": "PUT",
             "sortNum": 40000,
             "created": "2023-06-20T20:01:17.450Z",
-            "modified": "2023-06-21T12:04:05.228Z",
+            "modified": "2023-06-21T13:19:20.898Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n   \"nombre\": \"vegetta777\",\n   \"correo\": \"vegetta777@gmail.com\",\n  \"password\" : \"vegetta777\"\n}",
+                "raw": "{\n   \"estado\" : true\n}",
                 "form": []
             },
             "tests": []
@@ -783,11 +783,11 @@
             "colId": "32d3154c-3689-48cf-8bd0-09cf0689c4d5",
             "containerId": "16fd7585-b065-48aa-a7cb-5686ff3765cd",
             "name": "put",
-            "url": "http://localhost:8000/api/brevet/1",
+            "url": "http://localhost:8000/api/vehiculo/1",
             "method": "PUT",
             "sortNum": 40000,
             "created": "2023-06-20T22:22:02.392Z",
-            "modified": "2023-06-20T22:53:34.846Z",
+            "modified": "2023-06-21T13:24:29.684Z",
             "headers": [],
             "params": [],
             "body": {
@@ -1015,11 +1015,11 @@
             "colId": "32d3154c-3689-48cf-8bd0-09cf0689c4d5",
             "containerId": "c71eb129-94c5-48ea-96ca-0e1dbc26d49c",
             "name": "delete",
-            "url": "http://localhost:8000/api/targeta/1",
+            "url": "http://localhost:8000/api/targeta/del/4",
             "method": "DELETE",
             "sortNum": 50000,
             "created": "2023-06-20T23:04:48.307Z",
-            "modified": "2023-06-20T23:45:56.373Z",
+            "modified": "2023-06-21T13:51:08.358Z",
             "headers": [],
             "params": [],
             "tests": []

@@ -7,14 +7,33 @@ import {
     deleteTargetaState,
     deleteTargeta
  } from "../controllers/targeta";
+import { check } from "express-validator";
+import validarCampos from "../middlewares/validar-campos";
+import { isNumTargetaExist } from "../helpers/db-validators";
 
 const router = Router();
 
 router.get('/',       getTargetas);
-router.get('/:id',    getTargeta);
-router.post('/',      postTargeta);
-router.put('/:id',    putTargeta);
-router.delete('/:id', deleteTargetaState);
-router.delete('/del/:id', deleteTargeta);
+
+router.get('/:id',[
+    validarCampos
+], getTargeta);
+
+router.post('/', [
+    // check('num_targeta').custom(isNumTargetaExist), 
+    validarCampos
+], postTargeta);
+
+router.put('/:id',[
+    validarCampos
+], putTargeta);
+
+router.delete('/:id', [
+    validarCampos
+], deleteTargetaState);
+
+router.delete('/del/:id',[
+    validarCampos
+],  deleteTargeta);
 
 export default router;

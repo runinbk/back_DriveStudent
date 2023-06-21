@@ -1,5 +1,8 @@
 import User from "../models/usuario";
 import Role from "../models/rol";
+import Brevet from "../models/brevet";
+import Vehiculo from "../models/vehiculo";
+import Targeta from "../models/targeta";
 
 export const isRoleValue = async (role: string) => {
   try {
@@ -33,4 +36,38 @@ export const isUserForID = async (id: string) => {
     throw new Error(`Error al verificar el ID: ${error}`);
   }
 };
+
+export const isNumBrevetExist = async (numero: string) => {
+    try {
+      const existEmail = await Brevet.findOne({ where: { numero: numero } });
+      if (existEmail) {
+        throw new Error(`El numero de Brevet  "${numero}" ya está registrado`);
+      }
+    } catch (error) {
+      throw new Error(`Error al verificar el numero de Brevet: ${error}`);
+    }
+  };
+
+export const isPlacaExist = async (num_placa: string) => {
+    try {
+        const existEmail = await Vehiculo.findOne({ where: { num_placa: num_placa } });
+        if (existEmail) {
+        throw new Error(`El numero de Brevet  "${num_placa}" ya está registrado`);
+        }
+    } catch (error) {
+        throw new Error(`Error al verificar el numero de Brevet: ${error}`);
+    }
+};
+
+export const isNumTargetaExist = async (num_targeta: string) => {
+    try {
+        const existEmail = await Targeta.findOne({ where: { num_targeta: num_targeta } });
+        if (existEmail) {
+        throw new Error(`El numero de Targeta  "${num_targeta}" ya está registrado`);
+        }
+    } catch (error) {
+        throw new Error(`Error al verificar el numero de Targeta: ${error}`);
+    }
+};
+
 

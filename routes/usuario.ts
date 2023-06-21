@@ -30,8 +30,6 @@ router.post('/',[
 
 router.put('/:id',[
     check('id').custom(isUserForID),
-    // check('role').custom(isRoleValue),
-    check('correo').custom(isEmailExist),
     validarCampos
 ], putUsuario);
 
