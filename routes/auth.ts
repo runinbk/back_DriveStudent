@@ -6,11 +6,6 @@ import { login } from '../controllers/auth';
 
 const router = Router();
 
-// router.post('/login', [
-    
-// ],login );
-
-
 router.post('/login', [
     validarCampos,
   check('correo', 'El correo es obligatorio').isEmail(),
