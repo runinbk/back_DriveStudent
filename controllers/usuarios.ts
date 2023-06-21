@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import bcrypt from "bcrypt";
+
 import Usuario from "../models/usuario";
 
 
@@ -30,6 +32,9 @@ export const postUsuario = async ( req : Request, res: Response ) => {
 
     try {
         const usuario = new Usuario(body);
+         // Encriptar la contraseña
+        const salt = bcrypt.genSaltSync();
+        usuario.password = bcrypt.hashSync(usuario.password, salt);
         await usuario.save();
         res.json({
             msg :"Guardado exitos ...!!!"
@@ -55,6 +60,11 @@ export const putUsuario = async ( req : Request, res: Response ) => {
                 msg : `No existe un usuario con el id : ${id}`
             })
         }
+        if (body.password) {
+            // Encriptar la contraseña
+            const salt = bcrypt.genSaltSync();
+            body.password = bcrypt.hashSync(body.password, salt);
+          }
         await usuario.update(body);
         res.json({usuario})
     } catch (error) {

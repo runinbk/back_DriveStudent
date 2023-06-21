@@ -16,6 +16,7 @@ import soliviajeRoutes from "../routes/solicutud_viaje";
 import calicomRoutes from "../routes/cali_com";
 import pagoRoutes from "../routes/pago";
 import puntoRoutes from "../routes/punto";
+import authRoutes from "../routes/auth";
 
 
 
@@ -24,6 +25,7 @@ class Server {
     private app : Application;
     private port : string;
     private apiPaths = {
+        auth:         '/api/auth',
         usuarios:     '/api/usuarios',
         roles:        '/api/roles',
         preferencias: '/api/pref',
@@ -71,6 +73,7 @@ class Server {
     }
 
     routes(){
+        this.app.use( this.apiPaths.auth, authRoutes ),
         this.app.use( this.apiPaths.usuarios, usuarioRoutes ),
         this.app.use( this.apiPaths.roles, rolRoutes ),
         this.app.use( this.apiPaths.brevet, brevetRoutes ),
