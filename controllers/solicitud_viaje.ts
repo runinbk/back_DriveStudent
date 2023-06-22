@@ -31,9 +31,8 @@ export const postSoliViaje = async ( req : Request, res: Response ) => {
     try {
         const soliViaje = new SoliViaje(body);
         await soliViaje.save();
-        res.json({
-            msg :"Guardado exitos ...!!!"
-        });
+        res.json({soliViaje});
+
     } catch (error) {
         console.log(error);
         res.status(500).json({
